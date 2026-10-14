@@ -1,0 +1,10 @@
+{
+  "name": "haiku-crew",
+  "description": "Opus orchestrates, Haiku workers do the grunt work. Scoped worker agents, a delegation policy injected every session, and a hook that stops generic subagents from silently running on the main model.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Mykola",
+    "email": "mkloouo@gmail.com"
+  },
+  "keywords": ["subagents", "haiku", "orchestration", "token-efficiency"]
+}

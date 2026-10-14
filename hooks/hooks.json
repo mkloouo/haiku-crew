@@ -1,0 +1,30 @@
+{
+  "description": "haiku-crew: inject the delegation policy each session and gate model-less generic subagents",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/policy.md"],
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv",
+            "args": ["run", "--quiet", "--script", "${CLAUDE_PLUGIN_ROOT}/scripts/agent_gate.py"],
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
